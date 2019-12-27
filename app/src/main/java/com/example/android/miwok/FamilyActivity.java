@@ -16,8 +16,11 @@
 package com.example.android.miwok;
 
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,22 +34,31 @@ public class FamilyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_family);
 
-        ArrayList<Word> familys=new ArrayList<Word>();
+        final ArrayList<Word> familys=new ArrayList<Word>();
 
-        familys.add(new Word("father","әpә",R.drawable.family_father));
-        familys.add(new Word("mother","әṭa",R.drawable.family_mother));
-        familys.add(new Word("son","angsi",R.drawable.family_son));
-        familys.add(new Word("daughter","tune",R.drawable.family_daughter));
-        familys.add(new Word("older brother","taachi",R.drawable.family_older_brother));
-        familys.add(new Word("younger brother","chalitti",R.drawable.family_younger_brother));
-        familys.add(new Word("older sister","teṭe",R.drawable.family_older_sister));
-        familys.add(new Word("younger sister","kolliti",R.drawable.family_younger_sister));
-        familys.add(new Word("grandmother","ama",R.drawable.family_grandmother));
-        familys.add(new Word("grandfather","paapa",R.drawable.family_grandfather));
+        familys.add(new Word("father","әpә",R.drawable.family_father,R.raw.family_father));
+        familys.add(new Word("mother","әṭa",R.drawable.family_mother,R.raw.family_mother));
+        familys.add(new Word("son","angsi",R.drawable.family_son,R.raw.family_son));
+        familys.add(new Word("daughter","tune",R.drawable.family_daughter,R.raw.family_daughter));
+        familys.add(new Word("older brother","taachi",R.drawable.family_older_brother,R.raw.family_older_brother));
+        familys.add(new Word("younger brother","chalitti",R.drawable.family_younger_brother,R.raw.family_younger_brother));
+        familys.add(new Word("older sister","teṭe",R.drawable.family_older_sister,R.raw.family_older_sister));
+        familys.add(new Word("younger sister","kolliti",R.drawable.family_younger_sister,R.raw.family_younger_sister));
+        familys.add(new Word("grandmother","ama",R.drawable.family_grandmother,R.raw.family_grandmother));
+        familys.add(new Word("grandfather","paapa",R.drawable.family_grandfather,R.raw.family_father));
 
 
         WordAdapter adapter=new WordAdapter(this,familys,R.color.category_family);
         ListView listView=(ListView)findViewById(R.id.family_list);
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Word word=familys.get(i);
+                MediaPlayer mediaPlayer=MediaPlayer.create(FamilyActivity.this,word.getAudio_resource_id());
+                mediaPlayer.start();
+            }
+        });
     }
 }

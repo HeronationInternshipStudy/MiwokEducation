@@ -6,16 +6,20 @@ public class Word {
     private String english_word;
     private int word_resource_id=NO_IMAGE_PROVIDED;
     private static final int NO_IMAGE_PROVIDED=-1;
+    private int audio_resource_id;
 
-    public Word(String miwok_word,String english_word){
+
+    public Word(String miwok_word,String english_word,int audio_resource_id){
         this.miwok_word=miwok_word;
         this.english_word=english_word;
+        this.audio_resource_id=audio_resource_id;
     }
 
-    public Word(String miwok_word,String english_word,int word_resource_id){
+    public Word(String miwok_word,String english_word,int word_resource_id,int audio_resource_id){
         this.miwok_word=miwok_word;
         this.english_word=english_word;
         this.word_resource_id=word_resource_id;
+        this.audio_resource_id=audio_resource_id;
     }
 
     public String getEnglish_word() {
@@ -39,5 +43,13 @@ public class Word {
     public void setWord_resource_id(int word_resource_id){this.word_resource_id=word_resource_id;}
     public boolean hasImage(){
         return word_resource_id!=NO_IMAGE_PROVIDED;
+    }
+
+    public int getAudio_resource_id() {
+        return audio_resource_id;
+    }
+
+    public void setAudio_resource_id(int audio_resource_id) {
+        this.audio_resource_id = audio_resource_id;
     }
 }
