@@ -4,7 +4,8 @@ public class Word {
 
     private String miwok_word;
     private String english_word;
-    private int word_resource_id;
+    private int word_resource_id=NO_IMAGE_PROVIDED;
+    private static final int NO_IMAGE_PROVIDED=-1;
 
     public Word(String miwok_word,String english_word){
         this.miwok_word=miwok_word;
@@ -36,4 +37,7 @@ public class Word {
     }
 
     public void setWord_resource_id(int word_resource_id){this.word_resource_id=word_resource_id;}
+    public boolean hasImage(){
+        return word_resource_id!=NO_IMAGE_PROVIDED;
+    }
 }
