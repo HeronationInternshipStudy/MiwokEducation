@@ -4,10 +4,17 @@ public class Word {
 
     private String miwok_word;
     private String english_word;
+    private int word_resource_id;
 
     public Word(String miwok_word,String english_word){
         this.miwok_word=miwok_word;
         this.english_word=english_word;
+    }
+
+    public Word(String miwok_word,String english_word,int word_resource_id){
+        this.miwok_word=miwok_word;
+        this.english_word=english_word;
+        this.word_resource_id=word_resource_id;
     }
 
     public String getEnglish_word() {
@@ -18,6 +25,8 @@ public class Word {
         return miwok_word;
     }
 
+    public int getWord_resource_id() {return word_resource_id;}
+
     public void setEnglish_word(String english_word) {
         this.english_word = english_word;
     }
@@ -25,4 +34,6 @@ public class Word {
     public void setMiwok_word(String miwok_word) {
         this.miwok_word = miwok_word;
     }
+
+    public void setWord_resource_id(int word_resource_id){this.word_resource_id=word_resource_id;}
 }

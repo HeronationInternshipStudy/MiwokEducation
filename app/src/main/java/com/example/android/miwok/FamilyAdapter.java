@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -30,6 +31,8 @@ public class FamilyAdapter extends ArrayAdapter<Family> {
         miwok_text_view.setText(currentfamily.getMiwok_family());
         TextView default_text_view=(TextView)listItemView.findViewById(R.id.dFamily_text_view);
         default_text_view.setText(currentfamily.getEnglish_family());
+        ImageView family_image_view=(ImageView)listItemView.findViewById(R.id.family_image_view);
+        family_image_view.setImageResource(currentfamily.getFamily_resource_id());
 
         return listItemView;
     }

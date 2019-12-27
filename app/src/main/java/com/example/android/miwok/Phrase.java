@@ -9,6 +9,7 @@ public class Phrase {
         this.english_phrase=english_phrase;
     }
 
+
     public String getEnglish_phrase() {
         return english_phrase;
     }
@@ -17,6 +18,7 @@ public class Phrase {
         return miwok_phrase;
     }
 
+
     public void setEnglish_phrase(String english_phrase) {
         this.english_phrase = english_phrase;
     }
@@ -24,4 +26,6 @@ public class Phrase {
     public void setMiwok_phrase(String miwok_phrase) {
         this.miwok_phrase = miwok_phrase;
     }
+
+
 }

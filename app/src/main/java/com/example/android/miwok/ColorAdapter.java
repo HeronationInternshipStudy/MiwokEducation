@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -31,6 +32,8 @@ import java.util.ArrayList;
             miwok_text_view.setText(currentcolor.getMiwok_color());
             TextView default_text_view=(TextView)listItemView.findViewById(R.id.dColor_text_view);
             default_text_view.setText(currentcolor.getEnglish_color());
+            ImageView color_image_view=(ImageView)listItemView.findViewById(R.id.color_image_view);
+            color_image_view.setImageResource(currentcolor.getColor_resource_id());
 
             return listItemView;
         }

@@ -32,16 +32,16 @@ public class FamilyActivity extends AppCompatActivity {
 
         ArrayList<Family> familys=new ArrayList<Family>();
 
-        familys.add(new Family("father","әpә"));
-        familys.add(new Family("mother","әṭa"));
-        familys.add(new Family("son","angsi"));
-        familys.add(new Family("daughter","tune"));
-        familys.add(new Family("older brother","taachi"));
-        familys.add(new Family("younger brother","chalitti"));
-        familys.add(new Family("older sister","teṭe"));
-        familys.add(new Family("younger sister","kolliti"));
-        familys.add(new Family("grandmother","ama"));
-        familys.add(new Family("grandfather","paapa"));
+        familys.add(new Family("father","әpә",R.drawable.family_father));
+        familys.add(new Family("mother","әṭa",R.drawable.family_mother));
+        familys.add(new Family("son","angsi",R.drawable.family_son));
+        familys.add(new Family("daughter","tune",R.drawable.family_daughter));
+        familys.add(new Family("older brother","taachi",R.drawable.family_older_brother));
+        familys.add(new Family("younger brother","chalitti",R.drawable.family_younger_brother));
+        familys.add(new Family("older sister","teṭe",R.drawable.family_older_sister));
+        familys.add(new Family("younger sister","kolliti",R.drawable.family_younger_sister));
+        familys.add(new Family("grandmother","ama",R.drawable.family_grandmother));
+        familys.add(new Family("grandfather","paapa",R.drawable.family_grandfather));
 
 
         FamilyAdapter adapter=new FamilyAdapter(this,familys);
