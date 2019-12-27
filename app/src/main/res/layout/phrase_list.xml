@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:minHeight="@dimen/list_item_height">
 
     <TextView
         android:id="@+id/mPhrase_text_view"
