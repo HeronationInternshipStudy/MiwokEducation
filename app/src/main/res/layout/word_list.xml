@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
-    android:orientation="horizontal"
+    android:layout_height="@dimen/list_item_height"
+
     android:minHeight="@dimen/list_item_height"
     android:background="@color/tan_background">
+
     <ImageView
         android:id="@+id/word_image_view"
         android:layout_width="@dimen/list_item_height"
-        android:layout_height="@dimen/list_item_height"
-    />
-    <LinearLayout
+        android:layout_height="88dp" />
+    <RelativeLayout
         android:id="@+id/text_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="88dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/word_image_view"
         android:paddingLeft="15dp"
         android:background="@color/category_numbers"
         android:orientation="vertical">
@@ -23,21 +27,33 @@
 <TextView
     android:id="@+id/miwok_text_view"
     android:layout_width="match_parent"
-    android:layout_height="0dp"
+    android:layout_height="44dp"
     android:layout_weight="1"
     android:textAppearance="?android:textAppearanceMedium"
     android:textColor="@android:color/white"
     android:textStyle="bold"
     tools:text="lutti"></TextView>
 
-    <TextView
+
+        <TextView
         android:id="@+id/default_text_view"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="44dp"
         android:layout_weight="1"
+            android:layout_below="@id/miwok_text_view"
         android:textAppearance="?android:textAppearanceMedium"
         android:textColor="@android:color/white"
         tools:text="one"></TextView>
-    </LinearLayout>
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/play_btn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            app:srcCompat="@android:drawable/ic_media_play" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
